@@ -17,6 +17,7 @@ router.get("/create", (req, res, next) => {
   console.log("This is in the celebrities route");
   res.render("celebrities/new-celebrity");
 });
+
 router.post("/create", (req, res, next) => {
   console.log("About to create celeb", req.body);
   //   res.render("index");
