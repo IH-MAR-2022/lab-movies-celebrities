@@ -52,4 +52,14 @@ router.get("/:id", (req, res) => {
     });
 });
 
+router.post("/:id/delete", (req, res) => {
+  Movie.findByIdAndRemove(req.params.id)
+    .then(() => {
+      res.redirect("/movies");
+    })
+    .catch((error) => {
+      res.redirect("/movies");
+    });
+});
+
 module.exports = router;
